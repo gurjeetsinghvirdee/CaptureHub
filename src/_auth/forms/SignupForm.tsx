@@ -6,7 +6,7 @@ import { Button } from "src/components/ui/button";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { SignupValidation } from "src/lib/validation";
-
+import { MdOutlineCamera } from "react-icons/md";
 
 
 const SignupForm = () => {
@@ -15,7 +15,10 @@ const SignupForm = () => {
   const form = useForm<z.infer<typeof SignupValidation>>({
     resolver: zodResolver(SignupValidation),
     defaultValues: {
-      username: "",
+      name: '',
+      username: '',
+      email: '',
+      password: '',
     },
   })
 
@@ -28,6 +31,11 @@ const SignupForm = () => {
 
   return (
     <Form {...form}>
+
+      <div className="sm:w-420 flex-center flex-col">
+        <p><MdOutlineCamera alt="logo" /></p>
+      </div>
+
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <FormField 
           control={form.control}
