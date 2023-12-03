@@ -6,7 +6,6 @@ import { Button } from "src/components/ui/button";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { SignupValidation } from "src/lib/validation";
-import { MdOutlineCamera } from "react-icons/md";
 
 
 const SignupForm = () => {
@@ -33,7 +32,7 @@ const SignupForm = () => {
     <Form {...form}>
 
       <div className="sm:w-420 flex-center flex-col">
-        <p><MdOutlineCamera alt="logo" /></p>
+        <img src="/assets/images/IMG-20231203-WA0017-removebg-preview.png" alt="" />
       </div>
 
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
